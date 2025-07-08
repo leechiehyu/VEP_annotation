@@ -17,7 +17,7 @@ data=/staging/reserve/jacobhsu/TWB
 ref_dir=${data}/TWB_1490/VEP_custom_database
 twb_del=${ref_dir}/TWB1480_hs38DH_del.vcf.gz
 twb_ins=${ref_dir}/TWB1480_hs38DH_ins.vcf.gz
-twb_small=${ref_dir}/TWB1490_hg38_IGG_jc_biallelic.vcf.gz
+twb_small=${ref_dir}/TWB1490_hg38_IGG_jc_split_multiallelic.vcf.gz
 
 database=/staging/biology/r12455009/del_ins_snv_vcf_merge/VEP_annotation/database
 gnomaddel=${database}/DEL_gnomad.v4.1.non_neuro.vcf.gz
@@ -57,8 +57,8 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') Job started" >> ${logfile}
 # custom annotation
 ## TWB
 custom_snv_indel="file=${twb_small},short_name=TWB1490_SNV_indel,format=vcf,fields=AF,type=exact"
-custom_del="file=${twb_del},short_name=TWB1480_DEL,format=vcf,fields="FILTER%AF",type=overlap,distance=200"
-custom_ins="file=${twb_ins},short_name=TWB1480_INS,format=vcf,fields="FILTER%AF",type=overlap,distance=200"
+custom_del="file=${twb_del},short_name=TWB1480_DEL,format=vcf,fields=FILTER%AF,type=overlap,distance=200"
+custom_ins="file=${twb_ins},short_name=TWB1480_INS,format=vcf,fields=FILTER%AF,type=overlap,distance=200"
 
 ## gnomAD
 field="FILTER%AF%GRPMAX_AF%AF_eas%AF_non_neuro%AF_non_neuro_eas%AF_controls_and_biobanks%AF_controls_and_biobanks_eas"
