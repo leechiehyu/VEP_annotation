@@ -95,7 +95,7 @@ vep --cache --offline \
 
 
 # generate tsv
-echo -e "CHROM\tPOS\tREF\tALT\tFILTER\tSVLEN\tAC\tAN\tAF\tHET\tHET_PCT\tHOMALT\tHOMALT_PCT\t$(bcftools +split-vep -l VEP_${SAMPLE_ID}.vcf | cut -f 2 | tr '\n' '\t' | sed 's/\t$//')" > VEP_${SAMPLE_ID}.tsv
-bcftools +split-vep -f '%CHROM\t%POS\t%REF\t%ALT\t%FILTER\t%SVLEN\t%AC\t%AN\t%AF\t%HET\t%HET_PCT\t%HOMALT\t%HOMALT_PCT\t%CSQ\n' -d -A tab VEP_${SAMPLE_ID}.vcf >> VEP_${SAMPLE_ID}.tsv
+echo -e "CHROM\tPOS\tREF\tALT\tFILTER\t$(bcftools +split-vep -l VEP_${SAMPLE_ID}.vcf | cut -f 2 | tr '\n' '\t' | sed 's/\t$//')" > VEP_${SAMPLE_ID}.tsv
+bcftools +split-vep -f '%CHROM\t%POS\t%REF\t%ALT\t%FILTER\t%CSQ\n' -d -A tab VEP_${SAMPLE_ID}.vcf >> VEP_${SAMPLE_ID}.tsv
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') Job finished" >> ${logfile}
