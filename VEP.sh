@@ -15,9 +15,9 @@ VEP_FASTA=/staging/reserve/paylong_ntu/AI_SHARE/reference/VEP/Homo_sapiens.GRCh3
 data=/staging/reserve/jacobhsu/TWB
 # Files for custom annotation
 ref_dir=${data}/TWB_1490/VEP_custom_database
-twb_del=${ref_dir}/TWB1480_hs38DH_del.vcf.gz
-twb_ins=${ref_dir}/TWB1480_hs38DH_ins.vcf.gz
-twb_small=${ref_dir}/TWB1490_hg38_IGG_jc_split_multiallelic.vcf.gz
+twb_del=${ref_dir}/TWB1480_hs38DH_del_custom.vcf.gz
+twb_ins=${ref_dir}/TWB1480_hs38DH_ins_custom.vcf.gz
+twb_small=${ref_dir}/TWB1490_snv_custom_addAF.vcf.bgz
 
 database=/staging/biology/r12455009/del_ins_snv_vcf_merge/VEP_annotation/database
 gnomaddel=${database}/DEL_gnomad.v4.1.non_neuro.vcf.gz
